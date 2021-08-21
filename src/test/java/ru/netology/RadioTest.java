@@ -19,6 +19,22 @@ public class RadioTest {
         int expected = 6;
         assertEquals(expected, actual);
     }
+//    @Test
+//    public void increaseRadioStationMaxTest() {
+//        Radio radio = new Radio();
+//        radio.setCurrentRadioStation(radio.getCurrentRadioStation() + 9);
+//        int actual = radio.increaseRadioStation();
+//        int expected = 0;
+//        assertEquals(expected, actual);
+//    }
+//    @Test
+//    public void increaseRadioStationMinTest() {
+//        Radio radio = new Radio();
+//        radio.setCurrentRadioStation(radio.getCurrentRadioStation() + 10);
+//        int actual = radio.increaseRadioStation();
+//        int expected = 0;
+//        assertEquals(expected, actual);
+//    }
     @Test
     public void switchZeroTest() {
         Radio radio = new Radio();

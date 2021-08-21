@@ -18,10 +18,10 @@ public class Radio {
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
-        if (currentRadioStation <= minRadioStation) {
-            currentRadioStation = maxRadioStation;
-        } else if (currentRadioStation >= maxRadioStation) {
+        if (currentRadioStation >= maxRadioStation) {
             currentRadioStation = minRadioStation;
+        } else if (currentRadioStation <= minRadioStation) {
+            currentRadioStation = maxRadioStation;
         }
 
         // здесь уверены, что все проверки прошли
@@ -33,15 +33,18 @@ public class Radio {
         return currentRadioStation;
     }
 
+
     public int reduceRadioStation() {
         currentRadioStation = currentRadioStation - 1;
         return currentRadioStation;
     }
 
     public int increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
-        } else switchLastVolume();
+        } else {
+            switchLastVolume();
+        }
         return currentVolume;
     }
 
@@ -54,7 +57,7 @@ public class Radio {
     }
 
     public int reduceVolume() {
-        if (currentVolume > 0) {
+        if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
         } else switchZeroVolume();
         return currentVolume;
