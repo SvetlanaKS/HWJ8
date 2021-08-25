@@ -19,27 +19,12 @@ public class RadioTest {
         int expected = 6;
         assertEquals(expected, actual);
     }
-//    @Test
-//    public void increaseRadioStationMaxTest() {
-//        Radio radio = new Radio();
-//        radio.setCurrentRadioStation(radio.getCurrentRadioStation() + 9);
-//        int actual = radio.increaseRadioStation();
-//        int expected = 0;
-//        assertEquals(expected, actual);
-//    }
-//    @Test
-//    public void increaseRadioStationMinTest() {
-//        Radio radio = new Radio();
-//        radio.setCurrentRadioStation(radio.getCurrentRadioStation() + 10);
-//        int actual = radio.increaseRadioStation();
-//        int expected = 0;
-//        assertEquals(expected, actual);
-//    }
+
     @Test
     public void switchZeroTest() {
         Radio radio = new Radio();
         radio.setCurrentRadioStation(radio.getCurrentRadioStation()+9);
-        int actual = radio.getCurrentRadioStation();
+        int actual = radio.increaseRadioStation();
         int expected = 0;
         assertEquals(expected, actual);
     }
@@ -55,7 +40,7 @@ public class RadioTest {
     public void switchLastTest(){
         Radio radio = new Radio();
         radio.setCurrentRadioStation(radio.getCurrentRadioStation());
-        int actual = radio.getCurrentRadioStation();
+        int actual = radio.reduceRadioStation();
         int expected = 9;
         assertEquals(expected, actual);
     }

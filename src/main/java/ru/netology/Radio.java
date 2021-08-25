@@ -18,26 +18,33 @@ public class Radio {
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
-        if (currentRadioStation >= maxRadioStation) {
-            currentRadioStation = minRadioStation;
-        } else if (currentRadioStation <= minRadioStation) {
-            currentRadioStation = maxRadioStation;
+        if (currentRadioStation >= maxRadioStation){
+            this.currentRadioStation = maxRadioStation;
+        } else {
+            // здесь уверены, что все проверки прошли
+            this.currentRadioStation = currentRadioStation;
         }
-
-        // здесь уверены, что все проверки прошли
-        this.currentRadioStation = currentRadioStation;
     }
 
     public int increaseRadioStation() {
-        currentRadioStation = currentRadioStation + 1;
+        if (currentRadioStation >= maxRadioStation){
+            currentRadioStation = minRadioStation;
+        } else {
+            currentRadioStation = currentRadioStation + 1;
+        }
         return currentRadioStation;
     }
 
 
     public int reduceRadioStation() {
-        currentRadioStation = currentRadioStation - 1;
+        if (currentRadioStation == minRadioStation) {
+            currentRadioStation = maxRadioStation;
+        } else {
+            currentRadioStation = currentRadioStation - 1;
+        }
         return currentRadioStation;
     }
+
 
     public int increaseVolume() {
         if (currentVolume < maxVolume) {

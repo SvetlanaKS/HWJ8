@@ -15,13 +15,22 @@
     </properties>
 
     <dependencies>
+<!--                <dependency>-->
+<!--                    <groupId>org.projectlombok</groupId>-->
+<!--                    <artifactId>lombok</artifactId>-->
+<!--                    <version>1.18.20</version>-->
+<!--                    <scope>provided</scope>-->
+<!--                </dependency>-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.4.2</version>
             <scope>test</scope>
         </dependency>
+
+
     </dependencies>
+
 
     <build>
         <plugins>
@@ -41,7 +50,7 @@
                     <execution>
                         <!-- id (придумываем сами) -->
                         <id>prepare-agent</id>
-<!--                        <phase>initialize</phase>-->
+                        <!--                        <phase>initialize</phase>-->
                         <goals>
                             <!-- какую цель выполняем (берём из справки) -->
                             <goal>prepare-agent</goal>
