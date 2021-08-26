@@ -2,12 +2,47 @@ package ru.netology;
 
 public class Radio {
     private int maxRadioStation = 9;
-    private int minRadioStation = 0;
-    private int currentRadioStation = minRadioStation;
-    private int maxVolume = 10;
-    private int minVolume = 0;
-    private int currentVolume = minVolume;
+    private int minRadioStation;
+    private int currentRadioStation;
+    private int maxVolume = 100;
+    private int minVolume;
+    private int currentVolume;
     private boolean on;
+
+    public Radio() {
+    }
+
+    public Radio(int maxRadioStation) {
+        this.maxRadioStation = maxRadioStation;
+    }
+
+    public void setCurrentRadioStation(int currentRadioStation) {
+        if (currentRadioStation >= maxRadioStation) {
+            this.currentRadioStation = maxRadioStation;
+        } else {
+            // здесь уверены, что все проверки прошли
+            this.currentRadioStation = currentRadioStation;
+        }
+    }
+
+    public int increaseRadioStation() {
+        if (currentRadioStation >= maxRadioStation) {
+            currentRadioStation = minRadioStation;
+        } else {
+            currentRadioStation = currentRadioStation + 1;
+        }
+        return currentRadioStation;
+    }
+
+
+    public int reduceRadioStation() {
+        if (currentRadioStation == minRadioStation) {
+            currentRadioStation = maxRadioStation;
+        } else {
+            currentRadioStation = currentRadioStation - 1;
+        }
+        return currentRadioStation;
+    }
 
     public int getMinRadioStation() {
         return minRadioStation;
@@ -17,27 +52,6 @@ public class Radio {
         return currentRadioStation;
     }
 
-    public void setCurrentRadioStation(int currentRadioStation) {
-        if (currentRadioStation >= maxRadioStation) {
-            currentRadioStation = minRadioStation;
-        } else if (currentRadioStation <= minRadioStation) {
-            currentRadioStation = maxRadioStation;
-        }
-
-        // здесь уверены, что все проверки прошли
-        this.currentRadioStation = currentRadioStation;
-    }
-
-    public int increaseRadioStation() {
-        currentRadioStation = currentRadioStation + 1;
-        return currentRadioStation;
-    }
-
-
-    public int reduceRadioStation() {
-        currentRadioStation = currentRadioStation - 1;
-        return currentRadioStation;
-    }
 
     public int increaseVolume() {
         if (currentVolume < maxVolume) {
