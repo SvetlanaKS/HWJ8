@@ -12,8 +12,8 @@ public class Radio {
     public Radio() {
     }
 
-    public Radio(int maxRadioStation) {
-        this.maxRadioStation = maxRadioStation;
+    public Radio(int count) {
+        this.maxRadioStation = count-1;
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {

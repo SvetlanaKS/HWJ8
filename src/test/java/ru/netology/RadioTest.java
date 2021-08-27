@@ -12,16 +12,16 @@ public class RadioTest {
     @Test
     public void increaseRadioStationTest() {
         //      Radio radio = new Radio();
-        radio2.setCurrentRadioStation(radio2.getCurrentRadioStation() + 4);
+        radio2.setCurrentRadioStation(radio2.getCurrentRadioStation() + 3);
         int actual = radio2.increaseRadioStation();
-        int expected = 5;
+        int expected = 4;
         assertEquals(expected, actual);
     }
 
     @Test
     public void switchZeroTest() {
         //       Radio radio = new Radio();
-        radio2.setCurrentRadioStation(radio2.getCurrentRadioStation() + 5);
+        radio2.setCurrentRadioStation(radio2.getCurrentRadioStation() + 4);
         int actual = radio2.increaseRadioStation();
         int expected = 0;
         assertEquals(expected, actual);
@@ -41,7 +41,7 @@ public class RadioTest {
         //      Radio radio = new Radio();
         radio2.setCurrentRadioStation(radio2.getCurrentRadioStation());
         int actual = radio2.reduceRadioStation();
-        int expected = 5;
+        int expected = 4;
         assertEquals(expected, actual);
     }
 
